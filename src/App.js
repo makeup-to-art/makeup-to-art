@@ -1,5 +1,7 @@
 import './App.css';
 import Home from './Components/Home';
+import BrandColor from './Components/BrandColor';
+import Museum from './Museum';
 import {useState, useEffect} from 'react';
 import randomizer from './Utilities/randomizer';
 import axios from 'axios';
@@ -13,7 +15,11 @@ function App() {
     const [productColors,
         setProductColors] = useState();
     const [submit,
-        setSubmit] = useState(false)
+        setSubmit] = useState(false);
+    const [arrayStatus, 
+        setArrayStatus] = useState(false);
+    const [colorChoice, setColorChoice] = useState();
+
 
     useEffect(() => {
         if (submit === true) {
@@ -37,7 +43,8 @@ function App() {
                 randomizer(colors, randomColours) //Goes through the colors array and performs a forEach on the array and any sub arrays to grab random colours until a total of 7 are achieved.
                 setProductColors(randomColours);
                 setSubmit(false);
-                console.log(productColors)
+                // console.log(productColors)
+                setArrayStatus(true)
 
             })
 
@@ -51,9 +58,19 @@ function App() {
         setSubmit(true);
     }
 
+    const handleColorChoice = (e) => {
+        setColorChoice(e.target.value)
+    }
+
     return (
         <div className="App">
             <Home handleSubmit={handleSubmit}/>
+            {
+            arrayStatus === true
+            ? <BrandColor colorArray={productColors} handleColorChoice={handleColorChoice}/>
+            : null
+            }
+            <Museum colorChoice={colorChoice}/>
         </div>
     );
 };
