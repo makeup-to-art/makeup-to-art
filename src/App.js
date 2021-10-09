@@ -59,6 +59,8 @@ function App() {
     }
 
     const handleColorChoice = (e) => {
+        // let color = e.target.value
+        // let newColor = color.replace('#', '%')
         setColorChoice(e.target.value)
     }
 

@@ -12,5 +12,5 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 .colorBox {
   height: 100px;
   width: 100px;
-  background-color: #A9745E;
+  /* background-color: #A9745E; */
 }
