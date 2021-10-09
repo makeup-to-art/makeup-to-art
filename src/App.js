@@ -1,6 +1,7 @@
 import './App.css';
 import Home from './Components/Home';
 import {useState, useEffect} from 'react';
+import randomizer from './Utilities/randomizer';
 import axios from 'axios';
 
 // Makeup API: https://makeup-api.herokuapp.com/api/v1/products.json
@@ -31,23 +32,9 @@ function App() {
                         colors.push(product.product_colors);
                     }
                 })
-                //Goes through the colors array and performs a forEach on the array and any sub arrays to grab random colours until a total of 7 are achieved.
+
                 const randomColours = [];
-                    colors.forEach((color,index) => {
-                        color.forEach(element => {
-                          if (randomColours.length < 7) {
-                            let random = 0; //Default to zero in case the array only has a length of 1
-                            if (color.length > 1) { //Checks if array is larger than 1 entry, if so randomize the index used
-                              random = Math.floor(Math.random() * color.length);
-                            }
-                            randomColours.push(colors[index][random].hex_value)
-                          }
-
-                        })
-                    })
-
-
-
+                randomizer(colors, randomColours) //Goes through the colors array and performs a forEach on the array and any sub arrays to grab random colours until a total of 7 are achieved.
                 setProductColors(randomColours);
                 setSubmit(false);
                 console.log(productColors)
