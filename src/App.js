@@ -51,7 +51,7 @@ function App() {
 
             })
 
-        }
+        } 
     }, [submit, brandName, productColors]);
 
     const handleSubmit = (e, brand) => {

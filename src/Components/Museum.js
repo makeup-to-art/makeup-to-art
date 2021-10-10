@@ -24,5 +24,5 @@ const Museum = (props) => {
     <div></div>
   )
 }
-
+ 
 export default Museum;

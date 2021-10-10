@@ -20,5 +20,5 @@ const BrandColor = (props) => {
         </ul>
     )
 }
-
+ 
 export default BrandColor
