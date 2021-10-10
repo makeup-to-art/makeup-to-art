@@ -1,11 +1,12 @@
 import './App.css';
 import Home from './Components/Home';
 import BrandColor from './Components/BrandColor';
-import Museum from './Museum';
+import Museum from './Components/Museum';
 import {useState, useEffect} from 'react';
 import randomizer from './Utilities/randomizer';
 import axios from 'axios';
-
+import nearestColor from 'nearest-color'
+import colors from './Utilities/colors';
 // Makeup API: https://makeup-api.herokuapp.com/api/v1/products.json
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
     const [arrayStatus, 
         setArrayStatus] = useState(false);
     const [colorChoice, setColorChoice] = useState();
+
+    const compareColor = nearestColor.from(colors); //setup nearest color comparison package, checks inputted colour against provided color array
 
 
     useEffect(() => {
@@ -61,8 +64,10 @@ function App() {
     const handleColorChoice = (e) => {
         // let color = e.target.value
         // let newColor = color.replace('#', '%')
-        setColorChoice(e.target.value)
+        const closestColor = compareColor(e.target.value); //Checks which colour is closest to the one the user selected
+        setColorChoice(closestColor);
     }
+
 
     return (
         <div className="App">
@@ -72,7 +77,9 @@ function App() {
             ? <BrandColor colorArray={productColors} handleColorChoice={handleColorChoice}/>
             : null
             }
-            <Museum colorChoice={colorChoice}/>
+            {
+                colorChoice ? <Museum colorChoice={colorChoice}/> : null 
+            }
         </div>
     );
 };

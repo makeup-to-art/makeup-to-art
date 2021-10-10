@@ -6,7 +6,8 @@ import axios from "axios";
 
 const Museum = (props) => {
 
-  console.log(props.colorChoice)
+  const encoded = encodeURI(props.colorChoice);
+  console.log(`color choice is : ${props.colorChoice}`)
 
   axios({
     url: 'https://www.rijksmuseum.nl/api/en/collection',
@@ -15,9 +16,9 @@ const Museum = (props) => {
     params: {
         key: 'w2HhIYck',
         type: 'painting',
-        'f.normalized32Colors.hex': '#F6ECF3',
+        'f.normalized32Colors.hex': encoded,
     }
-}).then(response => {console.log(response);})
+}).then(response => console.log(response))
 
   return (
     <div></div>
