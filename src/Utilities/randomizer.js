@@ -6,10 +6,15 @@ const randomizer = (colors, randomColours) => {
                 if (color.length > 1) { //Checks if array is larger than 1 entry, if so randomize the index used
                     random = Math.floor(Math.random() * color.length);
                 }
-                randomColours.push(colors[index][random].hex_value)
+                if (!randomColours.includes(colors[index][random].hex_value)){
+                    randomColours.push(colors[index][random].hex_value)
             }
 
-        })
+        }
     })
+})
 }
 export default randomizer;
+
+
+
