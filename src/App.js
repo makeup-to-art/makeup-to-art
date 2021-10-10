@@ -1,9 +1,12 @@
 import './App.css';
 import Home from './Components/Home';
+import BrandColor from './Components/BrandColor';
+import Museum from './Components/Museum';
 import {useState, useEffect} from 'react';
 import randomizer from './Utilities/randomizer';
 import axios from 'axios';
-
+import nearestColor from 'nearest-color'
+import colors from './Utilities/colors';
 // Makeup API: https://makeup-api.herokuapp.com/api/v1/products.json
 
 function App() {
@@ -13,7 +16,13 @@ function App() {
     const [productColors,
         setProductColors] = useState();
     const [submit,
-        setSubmit] = useState(false)
+        setSubmit] = useState(false);
+    const [arrayStatus, 
+        setArrayStatus] = useState(false);
+    const [colorChoice, setColorChoice] = useState();
+
+    const compareColor = nearestColor.from(colors); //setup nearest color comparison package, checks inputted colour against provided color array
+
 
     useEffect(() => {
         if (submit === true) {
@@ -37,11 +46,12 @@ function App() {
                 randomizer(colors, randomColours) //Goes through the colors array and performs a forEach on the array and any sub arrays to grab random colours until a total of 7 are achieved.
                 setProductColors(randomColours);
                 setSubmit(false);
-                console.log(productColors)
+                // console.log(productColors)
+                setArrayStatus(true)
 
             })
 
-        }
+        } 
     }, [submit, brandName, productColors]);
 
     const handleSubmit = (e, brand) => {
@@ -51,9 +61,25 @@ function App() {
         setSubmit(true);
     }
 
+    const handleColorChoice = (e) => {
+        // let color = e.target.value
+        // let newColor = color.replace('#', '%')
+        const closestColor = compareColor(e.target.value); //Checks which colour is closest to the one the user selected
+        setColorChoice(closestColor);
+    }
+
+
     return (
         <div className="App">
             <Home handleSubmit={handleSubmit}/>
+            {
+            arrayStatus === true
+            ? <BrandColor colorArray={productColors} handleColorChoice={handleColorChoice}/>
+            : null
+            }
+            {
+                colorChoice ? <Museum colorChoice={colorChoice}/> : null 
+            }
         </div>
     );
 };
