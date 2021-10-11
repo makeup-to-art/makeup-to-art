@@ -7,6 +7,7 @@ import randomizer from './Utilities/randomizer';
 import axios from 'axios';
 import nearestColor from 'nearest-color'
 import colors from './Utilities/colors';
+import Footer from './Components/Footer';
 // Makeup API: https://makeup-api.herokuapp.com/api/v1/products.json
 
 function App() {
@@ -81,6 +82,7 @@ function App() {
             {
                 colorChoice ? <Museum colorChoice={colorChoice}/> : null 
             }
+            <Footer />
         </div>
     );
 };
