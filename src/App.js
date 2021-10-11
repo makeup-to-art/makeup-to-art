@@ -33,10 +33,10 @@ function App() {
                 method: 'GET',
                 dataResponse: 'json',
                 params: {
-                    brand: "chicken"
+                    brand: brandName
                 }
             }).then(response => {
-                if(response.data.length !== 0 || response.status !== 200){
+                if(response.data.length !== 0 && response.status === 200){
                     console.log(response.data)
                     const brandProducts = response.data;
                     const colors = [];
