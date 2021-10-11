@@ -23,16 +23,27 @@ a {
 
 /* ***************** */
 
-.App {
+.AppScreen1 {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
-  /* height: 100vh; */
+  min-height: 100vh;
   font-family: 'Ropa Sans', sans-serif;
-  /* background-image: url(./Utilities/assets/destopMainBackground.jpg); */
-  /* background-size: cover;
-  background-repeat: no-repeat; */
+  background-image: url(./assets/SK-C-1606.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.AppScreen2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-height: 100vh;
+  font-family: 'Ropa Sans', sans-serif;
+  background-image: url(./assets/SK-A-335.jpg);
+  background-size: cover;
+  background-position: 0;
+  background-repeat: no-repeat;
 }
 
 .art {
@@ -40,10 +51,15 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #fff;
+  width: 70%;
+  padding-bottom: 50px;
+  min-height: 50vh;
 }
 
 .headline {
   font-family: "WebnarW00-DemiBold", Sans-serif;
+  text-transform: uppercase;
 }
 
 button {
@@ -51,7 +67,8 @@ button {
 }
 
 button:hover {
-transform: scale(1.2)
+transform: scale(1.15);
+box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 29px 0px;
 }
 
 .colorBox {
@@ -64,23 +81,21 @@ transform: scale(1.2)
 
 footer {
   padding: 10px;
-  margin-top: 20px;
+  margin-top: auto;
   background-color: #284034;
   width: 100%;
-  position: absolute;
-  bottom: 0;
-  left:0;
   text-align: center;
 }
 
 footer p {
   margin: 0;
   color: #fff;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 img {
-  width: 50%;
+  width: 70%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 html {
@@ -114,20 +129,22 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 50px;
-  background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 10%;
-  margin-top: 25%;
+  padding: 70px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 65px;
+  margin-top: 20%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .userSelectMade {
   display: flex;
+  background-color: white;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0px;
-  margin-top: 1%;
-  width: 75%;
+  padding: 40px;
+  margin-top: 0;
+  width: 70%;
 }
 
 .userSelect button {
@@ -135,4 +152,11 @@ ul {
   color: #fff;
   border: none;
   padding: 5px;
+}
+
+.colorList {
+  background-color: #fff;
+  width: 70%;
+  padding: 25px;
+  margin: 0;
 }
