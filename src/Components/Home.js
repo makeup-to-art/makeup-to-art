@@ -64,9 +64,10 @@ const Home = (props) => {
 
 
     return (
-        <form onSubmit={ (e => props.handleSubmit(e, selectedBrand))}>
-            <label htmlFor="brandSelect">Select a makeup brand</label>
+        <form className="userSelect" onSubmit={ (e => props.handleSubmit(e, selectedBrand))}>
+            <label htmlFor="brandSelect">Hue Are You?!</label>
             <select name="brandSelect" id="brandSelect" onChange={(e => setSelectedBrand(e.target.value))} value={selectedBrand}>
+                <option value="" placeholder disabled selected>Select a makeup brand</option>
                 {
                     brands.map( (brand, index) => {
                         return (

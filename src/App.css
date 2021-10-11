@@ -9,8 +9,78 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.art {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  transition: 0.3s;
+}
+button:hover {
+scale: 1.2;
+}
+
 .colorBox {
   height: 100px;
   width: 100px;
-  /* background-color: #A9745E; */
+  cursor: pointer;
+  color: #fff;
+  border: 2px solid #000;
+}
+
+img {
+  width: 75%;
+}
+
+html {
+  font-size: 125%;
+}
+
+label {
+  color: #56BC72;
+  font-size: 2rem;
+  font-weight: bold;
+
+}
+
+li {
+  list-style: none;
+  margin: 5px 15px;
+}
+
+select {
+  margin: 20px 0;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+}
+
+.userSelect {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10%;
+}
+
+.userSelect button {
+  background-color: #56BC72;
+  color: #fff;
+  border: none;
+  padding: 5px;
 }
