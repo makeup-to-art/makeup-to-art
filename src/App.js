@@ -62,6 +62,7 @@ function App() {
     }
 
     const handleColorChoice = (e) => {
+        setColorChoice();
         // let color = e.target.value
         // let newColor = color.replace('#', '%')
         const closestColor = compareColor(e.target.value); //Checks which colour is closest to the one the user selected
