@@ -14,12 +14,25 @@ a {
   color: #fff;
 }
 
+/* ***************** */
+/* Typography Styles */
+/* ***************** */
+
+@import url('https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap');
+@import url('//db.onlinewebfonts.com/c/e6d1e7cf2a823f86a5866a9a0c1e7f08?family=WebnarW00-DemiBold');
+
+/* ***************** */
+
 .App {
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
   align-items: center;
-  height: 100vh;
+  /* height: 100vh; */
+  font-family: 'Ropa Sans', sans-serif;
+  /* background-image: url(./Utilities/assets/destopMainBackground.jpg); */
+  /* background-size: cover;
+  background-repeat: no-repeat; */
 }
 
 .art {
@@ -29,11 +42,16 @@ a {
   align-items: center;
 }
 
+.headline {
+  font-family: "WebnarW00-DemiBold", Sans-serif;
+}
+
 button {
   transition: 0.3s;
 }
+
 button:hover {
-scale: 1.2;
+transform: scale(1.2)
 }
 
 .colorBox {
@@ -49,6 +67,9 @@ footer {
   margin-top: 20px;
   background-color: #284034;
   width: 100%;
+  position: absolute;
+  bottom: 0;
+  left:0;
   text-align: center;
 }
 
@@ -70,12 +91,11 @@ label {
   color: #56BC72;
   font-size: 2rem;
   font-weight: bold;
-
 }
 
 li {
   list-style: none;
-  margin: 5px 15px;
+  margin: 10px 15px;
 }
 
 select {
@@ -97,6 +117,17 @@ ul {
   padding: 50px;
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 10%;
+  margin-top: 25%;
+}
+
+.userSelectMade {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  margin-top: 1%;
+  width: 75%;
 }
 
 .userSelect button {

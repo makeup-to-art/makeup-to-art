@@ -14,6 +14,7 @@ function App() {
 
     const [brandName,
         setBrandName] = useState();
+        const [apiError, setApiError] = useState();
     const [productColors,
         setProductColors] = useState();
     const [submit,
@@ -32,23 +33,28 @@ function App() {
                 method: 'GET',
                 dataResponse: 'json',
                 params: {
-                    brand: brandName
+                    brand: "chicken"
                 }
             }).then(response => {
-                const brandProducts = response.data;
-                const colors = [];
-                brandProducts.forEach(product => {
-                    if (product.product_colors.length > 0) {
-                        colors.push(product.product_colors);
-                    }
-                })
+                if(response.data.length !== 0 || response.status !== 200){
+                    console.log(response.data)
+                    const brandProducts = response.data;
+                    const colors = [];
+                    brandProducts.forEach(product => {
+                        if (product.product_colors.length > 0) {
+                            colors.push(product.product_colors);
+                        }
+                    })
+    
+                    const randomColours = [];
+                    randomizer(colors, randomColours) //Goes through the colors array and performs a forEach on the array and any sub arrays to grab random colours until a total of 7 are achieved.
+                    setProductColors(randomColours);
+                    setSubmit(false);
+                    setArrayStatus(true)
+                } else {
+                    setApiError('An error occured, please try again. If this re occurs, try a different brand or try again at a later time')
+                }
 
-                const randomColours = [];
-                randomizer(colors, randomColours) //Goes through the colors array and performs a forEach on the array and any sub arrays to grab random colours until a total of 7 are achieved.
-                setProductColors(randomColours);
-                setSubmit(false);
-                // console.log(productColors)
-                setArrayStatus(true)
 
             })
 
@@ -64,8 +70,6 @@ function App() {
 
     const handleColorChoice = (e) => {
         setColorChoice();
-        // let color = e.target.value
-        // let newColor = color.replace('#', '%')
         const closestColor = compareColor(e.target.value); //Checks which colour is closest to the one the user selected
         setColorChoice(closestColor);
     }
@@ -77,7 +81,7 @@ function App() {
             {
             arrayStatus === true
             ? <BrandColor colorArray={productColors} handleColorChoice={handleColorChoice}/>
-            : null
+            : <p>{apiError}</p>
             }
             {
                 colorChoice ? <Museum colorChoice={colorChoice}/> : null 

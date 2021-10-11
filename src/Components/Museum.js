@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 
 const Museum = (props) => {
   const [ artwork, setArtwork] = useState();
+  const [error, setError] = useState('Sorry, there were no paintings found. Please try a different selection.')
   const decoded = " " + decodeURI(props.colorChoice); //add a space cause api is retarded af
   console.log(`color choice is : ${decoded}`)
   
@@ -16,8 +17,6 @@ const Museum = (props) => {
     console.log(paintings);
     
     const painting = paintings[Math.floor(Math.random() * paintings.length)];
-    
-    // console.log(painting)
 
     setArtwork(painting);
   }
@@ -32,14 +31,25 @@ const Museum = (props) => {
             type: 'painting',
             'f.normalized32Colors.hex': decoded,
         }
-    }).then(response => randomPainting(response.data))
+    }).then(response => {
+      if(response.status === 200) {
+        randomPainting(response.data)
+      } else {
+        throw new Error(response.statusText)
+      }
+
+
+    })
+    .catch(error =>{
+      setError(error);
+    })
   }, [decoded])
 
 
   return (
     <div className='art'>
       {
-        artwork ? <img src={artwork.webImage.url} alt={artwork.title} /> : <p>Sorry no paintings match this HUEEEEEE </p>
+        artwork ? <img src={artwork.webImage.url} alt={artwork.title} /> : <p>{error}</p>
       }
       
     </div>

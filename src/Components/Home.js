@@ -11,8 +11,8 @@ const Home = (props) => {
         "boosh",
         "burt's bees",
         "butter london",
-        "c’est moi",
         "cargo cosmetics",
+        "c'est moi",
         "china glaze",
         "clinique",
         "coastal classic creation",
@@ -28,7 +28,7 @@ const Home = (props) => {
         "glossier",
         "green people",
         "iman",
-        "l’oreal",
+        "L'Oreal",
         "lotus cosmetics usa",
         "maia's mineral galaxy",
         "marcelle",
@@ -64,8 +64,8 @@ const Home = (props) => {
 
 
     return (
-        <form className="userSelect" onSubmit={ (e => props.handleSubmit(e, selectedBrand))}>
-            <label htmlFor="brandSelect">Hue Are You?!</label>
+        <form className={props.userSelect} onSubmit={ (e => props.handleSubmit(e, selectedBrand))}>
+            <label className="headline" htmlFor="brandSelect">Hue Are You?!</label>
             <select name="brandSelect" id="brandSelect" onChange={(e => setSelectedBrand(e.target.value))} value={selectedBrand}>
                 <option value="" placeholder="true" disabled>Select a makeup brand</option>
                 {
