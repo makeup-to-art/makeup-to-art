@@ -9,15 +9,22 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
 .App {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
+  height: 100vh;
 }
 
 .art {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -37,8 +44,22 @@ scale: 1.2;
   border: 2px solid #000;
 }
 
+footer {
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #284034;
+  width: 100%;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  color: #fff;
+  font-size: 0.8rem;
+}
+
 img {
-  width: 75%;
+  width: 50%;
 }
 
 html {

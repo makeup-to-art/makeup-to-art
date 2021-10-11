@@ -41,7 +41,7 @@ const Museum = (props) => {
       {
         artwork ? <img src={artwork.webImage.url} alt={artwork.title} /> : <p>Sorry no paintings match this HUEEEEEE </p>
       }
-
+      
     </div>
   )
 }
