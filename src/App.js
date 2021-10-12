@@ -33,10 +33,10 @@ function App() {
                 method: 'GET',
                 dataResponse: 'json',
                 params: {
-                    brand: brandName
+                    brand: brandName 
                 }
             }).then(response => {
-                if(response.data.length !== 0 && response.status === 200){
+                if(response.data.length !== 0 && response){
                     console.log(response.data)
                     const brandProducts = response.data;
                     const colors = [];
@@ -52,11 +52,13 @@ function App() {
                     setSubmit(false);
                     setArrayStatus(true)
                 } else {
-                    setApiError('An error occured, please try again. If this re occurs, try a different brand or try again at a later time')
+                    throw new Error()
                 }
 
 
             })
+            .catch(error => {
+                setApiError('An error occured, please try again. If this re occurs, try a different brand or try again at a later time')})
 
         } 
     }, [submit, brandName, productColors]);
