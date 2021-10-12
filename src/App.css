@@ -47,7 +47,7 @@ a {
 }
 
 .artContainer {
-  background-color: #ffffffb0;
+  background-color: #ffffffd3;
 }
 
 .art, .artContainer{
@@ -70,7 +70,8 @@ button {
   transition: 0.3s;
 }
 
-button:hover {
+button:hover,
+button:focus {
 box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 29px 0px;
 transform: scale(1.15);
 }
@@ -108,7 +109,7 @@ html {
 }
 
 label {
-  color: #56BC72;
+  color: #3F8050;
   font-size: 2rem;
   font-weight: bold;
 }
@@ -131,7 +132,7 @@ ul {
 
 .userSelect {
   align-items: center;
-  background-color: #ffffffb0;
+  background-color: #ffffffd3;
   border-radius: 65px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   display: flex;
@@ -143,7 +144,7 @@ ul {
 
 .userSelectMade {
   align-items: center;
-  background-color: #ffffffb0;
+  background-color: #ffffffd3;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -153,14 +154,14 @@ ul {
 }
 
 .userSelect button {
-  background-color: #56BC72;
+  background-color: #3F8050;
   border: none;
   color: #fff;
   padding: 5px;
 }
 
 .colorList {
-  background-color: #ffffffb0;
+  background-color: #ffffffd3;
   margin: 0 auto;
   padding: 25px;
   width: 70%;
