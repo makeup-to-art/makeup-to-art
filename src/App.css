@@ -37,7 +37,6 @@ a {
 .AppScreen2 {
   align-items: flex-end;
   background-image: url(./assets/SK-A-335.jpg);
-  background-color: tomato;
   background-position: 0;
   background-repeat: no-repeat;
   background-size: cover;
@@ -156,7 +155,7 @@ ul {
 }
 
 .userSelect button,
-.userSelect button {
+.userSelectMade button {
   background-color: #3F8050;
   border: none;
   color: #fff;
