@@ -22,6 +22,8 @@ function App() {
     const [arrayStatus, 
         setArrayStatus] = useState(false);
     const [colorChoice, setColorChoice] = useState();
+    const [userSelect, setUserSelect] = useState('userSelect')
+    const [screen, setScreen] = useState('AppScreen1')
 
     const compareColor = nearestColor.from(colors); //setup nearest color comparison package, checks inputted colour against provided color array
 
@@ -68,6 +70,8 @@ function App() {
         setProductColors([]) //Reset colours so the previous colours don't get used
         setBrandName(brand);
         setSubmit(true);
+        setUserSelect('userSelectMade')
+        setScreen('AppScreen2')
     }
 
     const handleColorChoice = (e) => {
@@ -78,8 +82,8 @@ function App() {
 
 
     return (
-        <div className="App">
-            <Home handleSubmit={handleSubmit}/>
+        <div className={screen}>
+            <Home handleSubmit={handleSubmit} userSelect={userSelect}/>
             {
             arrayStatus === true
             ? <BrandColor colorArray={productColors} handleColorChoice={handleColorChoice}/>

@@ -1,10 +1,9 @@
 
 const BrandColor = (props) => {
 
-
     
     return(
-        <ul>
+        <ul className="colorList">
             {
                 props.colorArray.map((color, index) => {
 
@@ -20,5 +19,5 @@ const BrandColor = (props) => {
         </ul>
     )
 }
- 
+
 export default BrandColor

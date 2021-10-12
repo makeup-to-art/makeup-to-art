@@ -49,7 +49,12 @@ const Museum = (props) => {
   return (
     <div className='art'>
       {
-        artwork ? <img src={artwork.webImage.url} alt={artwork.title} /> : <p>{error}</p>
+        artwork ? 
+        <div className='art'>
+        <img src={artwork.webImage.url} alt={artwork.title} />
+        <h3>{artwork.title}</h3>
+        </div>
+        : <p>{error}</p>
       }
       
     </div>
