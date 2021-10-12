@@ -56,7 +56,6 @@ function App() {
                     throw new Error()
                 }
 
-
             })
             .catch(error => {
                 setApiError('An error occured, please try again. If this re occurs, try a different brand or try again at a later time')})
