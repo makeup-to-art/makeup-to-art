@@ -19,7 +19,7 @@ a {
 /* ***************** */
 
 @import url('https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap');
-@import url('//db.onlinewebfonts.com/c/e6d1e7cf2a823f86a5866a9a0c1e7f08?family=WebnarW00-DemiBold');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 /* ***************** */
 
@@ -62,8 +62,9 @@ a {
 }
 
 .headline {
-  font-family: "WebnarW00-DemiBold", Sans-serif;
+  font-family: 'Bebas Neue', cursive;;
   text-transform: uppercase;
+  font-size: 3rem;
 }
 
 button {
@@ -152,7 +153,8 @@ ul {
   width: 70%;
 }
 
-.userSelect button {
+.userSelect button,
+.userSelectMade button {
   background-color: #56BC72;
   border: none;
   color: #fff;
