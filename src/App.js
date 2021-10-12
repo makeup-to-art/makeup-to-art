@@ -69,6 +69,7 @@ function App() {
         setProductColors([]) //Reset colours so the previous colours don't get used
         setBrandName(brand);
         setSubmit(true);
+        setColorChoice('');// removes colour choice so that if a previous painting was shown it no longer will be
         setUserSelect('userSelectMade')
         setScreen('AppScreen2')
     }
