@@ -39,7 +39,6 @@ function App() {
                 }
             }).then(response => {
                 if(response.data.length !== 0 && response){
-                    console.log(response.data)
                     const brandProducts = response.data;
                     const colors = [];
                     brandProducts.forEach(product => {
