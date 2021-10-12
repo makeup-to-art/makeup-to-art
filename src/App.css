@@ -19,7 +19,7 @@ a {
 /* ***************** */
 
 @import url('https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap');
-@import url('//db.onlinewebfonts.com/c/e6d1e7cf2a823f86a5866a9a0c1e7f08?family=WebnarW00-DemiBold');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 /* ***************** */
 
@@ -47,7 +47,7 @@ a {
 }
 
 .artContainer {
-  background-color: #ffffffb0;
+  background-color: #ffffffd3;
 }
 
 .art, .artContainer{
@@ -62,15 +62,17 @@ a {
 }
 
 .headline {
-  font-family: "WebnarW00-DemiBold", Sans-serif;
+  font-family: 'Bebas Neue', cursive;;
   text-transform: uppercase;
+  font-size: 3rem;
 }
 
 button {
   transition: 0.3s;
 }
 
-button:hover {
+button:hover,
+button:focus {
 box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 29px 0px;
 transform: scale(1.15);
 }
@@ -108,7 +110,7 @@ html {
 }
 
 label {
-  color: #56BC72;
+  color: #3F8050;
   font-size: 2rem;
   font-weight: bold;
 }
@@ -131,7 +133,7 @@ ul {
 
 .userSelect {
   align-items: center;
-  background-color: #ffffffb0;
+  background-color: #ffffffd3;
   border-radius: 65px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   display: flex;
@@ -143,7 +145,7 @@ ul {
 
 .userSelectMade {
   align-items: center;
-  background-color: #ffffffb0;
+  background-color: #ffffffd3;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -152,15 +154,16 @@ ul {
   width: 70%;
 }
 
+.userSelect button,
 .userSelect button {
-  background-color: #56BC72;
+  background-color: #3F8050;
   border: none;
   color: #fff;
   padding: 5px;
 }
 
 .colorList {
-  background-color: #ffffffb0;
+  background-color: #ffffffd3;
   margin: 0 auto;
   padding: 25px;
   width: 70%;
