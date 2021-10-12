@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 const Museum = (props) => {
   const [ artwork, setArtwork] = useState();
   const [error, setError] = useState()
-  const decoded = " " + decodeURI(props.colorChoice); //add a space cause api is retarded af
+  const color = " " + props.colorChoice; //add a space cause api is retarded af
   const randomPainting = (artArray) => {
     const paintings = artArray.artObjects
     const painting = paintings[Math.floor(Math.random() * paintings.length)];
@@ -24,7 +24,7 @@ const Museum = (props) => {
         params: {
             key: 'w2HhIYck',
             type: 'painting',
-            'f.normalized32Colors.hex': decoded,
+            'f.normalized32Colors.hex': color,
         }
     }).then(response => { 
       if(response && response.data.artObjects.length !== 0) {
@@ -35,7 +35,7 @@ const Museum = (props) => {
 
     }).catch(error => setError('An error occurred, please try a different selection or try again later'))
 
-  }, [decoded])
+  }, [color])
 
 
 

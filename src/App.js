@@ -60,8 +60,7 @@ function App() {
                 }
 
             }).catch(error => {
-                setApiError('An error occured, please try again. If this re occurs, try a different brand or ' +
-                        'try again at a later time')
+                setApiError('An error occured, please try again. If this re occurs, try a different brand or try again at a later time');
             })
 
         }
@@ -82,7 +81,7 @@ function App() {
         //Timeout is used so that the museum component has time to realize the colour has changed and will remove the last image.
         setTimeout(() => {
             const closestColor = compareColor(e.target.value); //Checks which colour is closest to the one the user selected
-            setColorChoice(" " + closestColor);
+            setColorChoice(closestColor);
         }, 10)
 
     }
