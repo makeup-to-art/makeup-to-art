@@ -9,7 +9,7 @@ const BrandColor = (props) => {
 
                     return(
                         <li key={index}>
-                                <button className="colorBox" style={{backgroundColor: `${color}`}} onClick={props.handleColorChoice} value={color}>{color}</button>
+                                <button className="colorBox" style={{backgroundColor: `${color}`}} onClick={props.handleColorChoice} value={color}></button>
                         </li>
                     )
                 })
