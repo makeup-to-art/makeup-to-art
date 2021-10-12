@@ -14,6 +14,8 @@ const Museum = (props) => {
     setArtwork(painting);
   }
 
+
+
   useEffect( () => {
     axios({
         url: 'https://www.rijksmuseum.nl/api/en/collection',
@@ -36,6 +38,9 @@ const Museum = (props) => {
   }, [decoded])
 
 
+
+ 
+
   return (
     <div className='artContainer'>
       {
@@ -44,8 +49,12 @@ const Museum = (props) => {
         <img src={artwork.webImage.url} alt={artwork.title} />
         <h3>{artwork.title}</h3>
         </div>
-        : <p>{error}</p>
+        : <p>Getting some artwork, please wait</p>
       }
+      {
+        error ? <p>{error}</p>: null
+      }
+
       
     </div>
   )
