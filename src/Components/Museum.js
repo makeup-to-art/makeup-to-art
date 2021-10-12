@@ -47,7 +47,7 @@ const Museum = (props) => {
 
 
   return (
-    <div className='art'>
+    <div className='artContainer'>
       {
         artwork ? 
         <div className='art'>
