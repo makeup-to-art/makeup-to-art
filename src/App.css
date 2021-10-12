@@ -37,6 +37,7 @@ a {
 .AppScreen2 {
   align-items: flex-end;
   background-image: url(./assets/SK-A-335.jpg);
+  background-color: tomato;
   background-position: 0;
   background-repeat: no-repeat;
   background-size: cover;
@@ -164,4 +165,59 @@ ul {
   margin: 0 auto;
   padding: 25px;
   width: 70%;
+}
+
+/* ***************** */
+/*** Media Queries ***/
+/* ***************** */
+@media (max-width: 820px) {
+  .userSelectMade {
+    padding: 40px 40px 0 40px;
+    width: 90%;
+    transition: ease all .8s;
+  }
+
+  .colorList,
+  .artContainer {
+    width: 90%;
+    transition: ease all .8s;
+  }
+  
+}
+
+@media (max-width: 650px) {
+  label {
+    font-size: 1.5rem;
+  }
+
+  .colorBox {
+    height: 80px;
+    width: 80px;
+    transition: ease all .8s;
+  }
+}
+
+@media (max-width: 480px) {
+  label {
+    font-size: 1.3rem;
+  }
+
+  select {
+    margin: 13px;
+    font-size: 90%;
+  }
+
+  .userSelect {
+    padding: 50px;
+  }
+
+  .colorBox {
+    height: 60px;
+    width: 60px;
+    transition: ease all .8s;
+  }
+
+  .art {
+    padding-bottom: 20px;
+  }
 }
