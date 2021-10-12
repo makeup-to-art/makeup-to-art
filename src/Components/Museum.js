@@ -8,18 +8,9 @@ const Museum = (props) => {
   const [ artwork, setArtwork] = useState();
   const [error, setError] = useState()
   const decoded = " " + decodeURI(props.colorChoice); //add a space cause api is retarded af
-  console.log(`color choice is : ${decoded}`)
-  
-
   const randomPainting = (artArray) => {
-    console.log(artArray)
     const paintings = artArray.artObjects
-    console.log(paintings);
-    
     const painting = paintings[Math.floor(Math.random() * paintings.length)];
-    
-    // console.log(painting)
-
     setArtwork(painting);
   }
 
@@ -34,7 +25,6 @@ const Museum = (props) => {
             'f.normalized32Colors.hex': decoded,
         }
     }).then(response => { 
-      console.log(response)
       if(response && response.data.artObjects.length !== 0) {
         randomPainting(response.data)
       } else {
@@ -47,7 +37,7 @@ const Museum = (props) => {
 
 
   return (
-    <div className='art'>
+    <div className='artContainer'>
       {
         artwork ? 
         <div className='art'>
