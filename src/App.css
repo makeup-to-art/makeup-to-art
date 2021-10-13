@@ -57,7 +57,7 @@ a {
   justify-content: center;
   margin: 0 auto;
   min-height: 50vh;
-  padding-bottom: 50px;
+  padding-bottom: 25px;
   width: 70%;
   text-align: center;
 }
@@ -66,6 +66,18 @@ a {
   font-family: 'Bebas Neue', cursive;;
   text-transform: uppercase;
   font-size: 3rem;
+  color: #284034
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+h2 {
+  color: #3F8050;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0;
 }
 
 button {
@@ -112,7 +124,7 @@ html {
 
 label {
   color: #3F8050;
-  font-size: 2rem;
+  font-size: 1rem;
   font-weight: bold;
 }
 
@@ -123,7 +135,9 @@ li {
 
 select {
   margin: 20px 0;
+  padding: 5px;
 }
+
 
 ul {
   display: flex;
@@ -156,7 +170,7 @@ ul {
 }
 
 .userSelect button,
-.userSelectMade button {
+.userSelectMade button, .clearButton {
   background-color: #3F8050;
   border: none;
   color: #fff;
@@ -164,9 +178,17 @@ ul {
 }
 
 .colorList {
-  background-color: #ffffffd3;
   margin: 0 auto;
   padding: 25px;
+  width: 70%;
+}
+
+.colourContainer {
+  background-color: #ffffffd3;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   width: 70%;
 }
 
@@ -181,7 +203,7 @@ ul {
   }
 
   .colorList,
-  .artContainer {
+  .artContainer,.colourContainer {
     width: 90%;
     transition: ease all .8s;
   }
