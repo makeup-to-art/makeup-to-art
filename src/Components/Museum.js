@@ -15,7 +15,6 @@ const Museum = (props) => {
   }
 
 
-
   useEffect( () => {
     axios({
         url: 'https://www.rijksmuseum.nl/api/en/collection',
@@ -37,9 +36,6 @@ const Museum = (props) => {
 
   }, [color])
 
-
-
- 
 
   return (
     <div className='artContainer'>
