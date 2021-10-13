@@ -169,7 +169,7 @@ ul {
 }
 
 .userSelect button,
-.userSelectMade button {
+.userSelectMade button, .clearButton {
   background-color: #3F8050;
   border: none;
   color: #fff;
