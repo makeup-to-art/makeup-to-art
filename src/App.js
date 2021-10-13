@@ -27,7 +27,9 @@ function App() {
     const [userSelect,
         setUserSelect] = useState('userSelect')
     const [screen,
-        setScreen] = useState('AppScreen1')
+        setScreen] = useState('AppScreen1');
+    const [ artwork, 
+        setArtwork] = useState([])
 
     const compareColor = nearestColor.from(colors); //setup nearest color comparison package, checks inputted colour against provided color array
 
@@ -72,7 +74,6 @@ function App() {
         setProductColors([]) //Reset colours so the previous colours don't get used
         setBrandName(brand);
         setSubmit(true);
-        setColorChoice(''); // removes colour choice so that if a previous painting was shown it no longer will be visible
         setUserSelect('userSelectMade')
         setScreen('AppScreen2')
     }
@@ -87,6 +88,16 @@ function App() {
 
     }
 
+    const updateArtwork = (newArt) => {
+        setArtwork(newArt);
+    }
+
+    const clearGallery = () => {
+        updateArtwork([])
+        setColorChoice();
+        // setArtworkPresent(false);
+    }
+
     return (
         <div className={screen}>
             <Home handleSubmit={handleSubmit} userSelect={userSelect}/> {arrayStatus === true
@@ -94,7 +105,7 @@ function App() {
                 : <p>{apiError}</p>
 }
             {colorChoice
-                ? <Museum colorChoice={colorChoice}/>
+                ? <Museum colorChoice={colorChoice} artwork={artwork} updateArtwork={updateArtwork} clearGallery={clearGallery}/>
                 : null
 }
             <Footer/>
