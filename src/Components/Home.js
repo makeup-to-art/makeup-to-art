@@ -65,7 +65,9 @@ const Home = (props) => {
 
     return (
         <form className={props.userSelect} onSubmit={ (e => props.handleSubmit(e, selectedBrand))}>
-            <label className="headline" htmlFor="brandSelect">Hue Are You?</label>
+            <h1 className="headline">Hue Are You?!</h1>
+            <label htmlFor="brandSelect">Pick your Favourite Makeup Brand</label>
+
             <select name="brandSelect" id="brandSelect" required onChange={(e => setSelectedBrand(e.target.value))} value={selectedBrand}>
                 <option value="" disabled>Select a makeup brand</option>
                 {

@@ -3,6 +3,8 @@ const BrandColor = (props) => {
 
     
     return(
+        <div className="colourContainer">
+        <h2>Pick a color below & we will find a painting to match your look!</h2>
         <ul className="colorList">
             {
                 props.colorArray.map((color, index) => {
@@ -15,6 +17,7 @@ const BrandColor = (props) => {
                 })
             }
         </ul>
+        </div>
     )
 }
 
