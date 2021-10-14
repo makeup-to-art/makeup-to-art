@@ -160,6 +160,7 @@ ul {
   justify-content: center;
   margin-top: 20%;
   padding: 70px;
+  max-width: 1440px;
 }
 
 .userSelectMade {
@@ -171,6 +172,7 @@ ul {
   margin: auto auto 0;
   padding: 40px;
   width: 70%;
+  max-width: 1440px;
 }
 
 .userSelect button,
