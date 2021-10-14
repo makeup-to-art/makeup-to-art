@@ -71,12 +71,12 @@ const Home = (props) => {
             <select name="brandSelect" id="brandSelect" required onChange={(e => setSelectedBrand(e.target.value))} value={selectedBrand}>
                 <option value="" disabled>Select a makeup brand</option>
                 {
-                    brands.map( (brand, index) => {
-                        return (
-                            <option key={index} value={brand}>{brand}</option>
-                        )
+                  brands.map( (brand, index) => {
+                    return (
+                      <option key={index} value={brand}>{brand}</option>
+                      )
                     })
-                }
+                  }
             </select>
             <button type="submit">Select Brand</button>
         </form>
