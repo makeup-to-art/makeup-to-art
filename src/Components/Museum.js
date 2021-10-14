@@ -75,9 +75,9 @@ const Museum = (props) => {
         <div className='artContainer'>
             {artworkPresent
                 ? <div className="art">
-                        {artwork.map((art, index) => {
+                        {artwork.map((art) => {
                             return (
-                                <div className='art' key={index}>
+                                <div className='art' key={art.id}>
                                     <img src={art.webImage.url} alt={art.title}/>
                                     <h3>{art.title}</h3>
                                 </div>
