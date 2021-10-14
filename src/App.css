@@ -211,12 +211,20 @@ ul {
     width: 90%;
     transition: ease all .8s;
   }
+
+  h2 {
+    margin: 15px 5px 0 5px;
+  }
   
 }
 
 @media (max-width: 650px) {
+  h2 {
+    text-align: center;
+  }
   label {
     font-size: 1.5rem;
+    text-align: center;
   }
 
   .colorBox {
@@ -227,6 +235,10 @@ ul {
 }
 
 @media (max-width: 480px) {
+  .headline {
+    font-size: 2.5rem;
+  }
+
   label {
     font-size: 1.3rem;
   }
