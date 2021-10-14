@@ -50,7 +50,7 @@ a {
   background-color: #ffffffd3;
 }
 
-.art, .artContainer{
+.artContainer, .art{
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -60,6 +60,10 @@ a {
   padding-bottom: 25px;
   width: 70%;
   text-align: center;
+}
+
+.wrapper {
+  max-width: 1440px;
 }
 
 .headline {
