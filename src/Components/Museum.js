@@ -69,7 +69,7 @@ const Museum = (props) => {
 
         }).catch(error => setError('An error occurred, please try a different selection or try again later'))
 
-    }, [color, artwork, updateArtwork,])
+    }, [color, artwork, updateArtwork])
 
     return (
         <section className='artContainer wrapper'>
