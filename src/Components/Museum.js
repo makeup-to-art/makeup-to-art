@@ -72,9 +72,9 @@ const Museum = (props) => {
     }, [color, artwork, updateArtwork])
 
     return (
-        <div className='artContainer'>
+        <section className='artContainer wrapper'>
             {artworkPresent
-                ? <div className="art">
+                ? <>
                         {artwork.map((art) => {
                             return (
                                 <div className='art' key={art.id}>
@@ -89,7 +89,7 @@ const Museum = (props) => {
                             onClick={() => {
                             props.clearGallery()
                         }}>Clear Gallery</button>
-                    </div>
+                    </>
                 : <p>Getting some artwork, please wait</p>
 }
 
@@ -98,7 +98,7 @@ const Museum = (props) => {
                 : null
 }
 
-        </div>
+        </section>
     )
 }
 

@@ -99,7 +99,7 @@ function App() {
     }
 
     return (
-        <div className={screen}>
+        <main className={screen}>
             <Home handleSubmit={handleSubmit} userSelect={userSelect}/> {arrayStatus === true
                 ? <BrandColor colorArray={productColors} handleColorChoice={handleColorChoice}/>
                 : <p>{apiError}</p>
@@ -109,7 +109,7 @@ function App() {
                 : null
 }
             <Footer/>
-        </div>
+        </main>
     );
 };
 
