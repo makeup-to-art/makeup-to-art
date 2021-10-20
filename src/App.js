@@ -105,10 +105,14 @@ function App() {
 
     return (
         <main className={screen}>
-            <Home handleSubmit={handleSubmit} userSelect={userSelect}/> {arrayStatus === true
-                ? <BrandColor colorArray={productColors} handleColorChoice={handleColorChoice}/>
+            <Home handleSubmit={handleSubmit} userSelect={userSelect}/> 
+            {arrayStatus === true
+                ? <BrandColor 
+                    colorArray={productColors} 
+                    handleColorChoice={handleColorChoice}
+                />
                 : <p>{apiError}</p>
-}
+            }
             {colorChoice
                 ? <Museum
                         colorChoice={colorChoice}
@@ -117,7 +121,7 @@ function App() {
                         clearGallery={clearGallery}
                         getArtwork={getArtwork}/>
                 : null
-}
+            }
             <Footer/>
         </main>
     );
