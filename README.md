@@ -1,70 +1,19 @@
-# Getting Started with Create React App
+# Hue Are You?
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## What is it?
+Hue Are You is a react project developed at Juno College as a group project. The request was an application that would allow a user to choose a makeup brand and then be presented with colours from that brand. The user can then select a colour and they will be presented with a painting from the Rijksmuseum containing that colour.
 
-## Available Scripts
+## How does it work?
+Two API's are used in this project, the Makeup API and the Rijksmuseum API. The brands are stored in an array that then populate a drop down list, this list has it's value controlled via react and state. Once a brand is chosen and submitted we use that state value to call the Makeup API and retrieve an array of colours for that brand. A randomizer function will then grab up to 7 colours from the array and then they are displayed on the screen. Once one of these colours is selected, it's value is passed to a state, and then that is used to makle the call to the Rijksmuseum API.
 
-In the project directory, you can run:
+However, before that can happen we must find the nearest colour match to the colours that the API will accept. While there are millions of colours in the world, the API will only accept 32, and some of those are duplicates. We achieved this through the use of the nrearest-colour npm package. Once we perform this action and make the API call, we then grab a random painting from the data returned and display it to the screen. As a stretch goal we allowed the user to select more paintings by choosing another colours, or the same one if they would like.
 
-### `npm start`
+This raised the question of how to deal with duplicates. This is achieved by using a while loop and some logic statements that check to see if the painting ID already exist in the painting state, if it does we randomize and select a new painting. If there are 3 duplicates in a row we assume that we have reached the end of the available results and notify the user. This was done to prevent an inifinite loop situation.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Challenges/Wins
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+As stated above, one of our challenges was having to find the nearest colour that would be accepted by the API. This was solved through the use of an NPM package. Another challenge we ran into, was that on a few colours for the api, a space was required before the hexcode in order for it to be valid. While this was a minor issue, it was a good lesson in the quirks of different api's. 
 
-### `npm test`
+A bigger challenege was handling the data returned from the rijksmuseum and trying to randomize which painting we used and to check for duplicates. THe solution we came up with for this was a recursive function that would compare the id's of the painting to ones stored in a state. If the id's matched, the function would call itself again. However if this was done 3 times in a row and we we're still getting matches, we would end the function and notify the user that all results have been displayed.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Our final win, is how well we worked together as a team. We were able to openly discuss all isues and ideas, as well as consult and guide eachother through code problems and learn not only developing in a team, but more about code and different viewpoints.
